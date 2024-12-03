@@ -1,0 +1,11 @@
+# config
+
+[window]
+name = 'earthTycoon'
+w = 960
+h = 540
+
+[textures]
+mineTextures = ['coalMine.png', 'steelMine.png', 'uranMine.png']
+
+test = "jakisnapis"
