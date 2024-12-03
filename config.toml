@@ -1,11 +1,15 @@
 # config
 
 [window]
-name = 'earthTycoon'
-w = 960
-h = 540
+title = 'earthTycoon'
+fps = 60
+width = 960
+height = 540
 
 [textures]
 mineTextures = ['coalMine.png', 'steelMine.png', 'uranMine.png']
+
+[sounds]
+mineSound = 'mineSound.mp3'
 
 test = "jakisnapis"

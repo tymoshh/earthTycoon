@@ -21,6 +21,7 @@ namespace filemgr {
             case 2:
                 return configTbl[elementLocation[0]][elementLocation[1]].value<std::string>().value();
         }
+        return "ERROR";
     }
 
     int getInt(std::vector<std::string> elementLocation) {
@@ -30,6 +31,22 @@ namespace filemgr {
             case 2:
                 return configTbl[elementLocation[0]][elementLocation[1]].value<int>().value();
         }
+        return -1;
+    }
+
+    std::vector<int> getIntVec(std::vector<std::string> elementLocation) {
+        std::vector<int> tmpVec;
+        toml::array* tmpArr;
+        switch (elementLocation.size()) {
+            case 1:
+                tmpArr = configTbl[elementLocation[0]].as_array();
+            case 2:
+                tmpArr = configTbl[elementLocation[0]][elementLocation[1]].as_array();
+        }
+        for (auto &i : *tmpArr) {
+            tmpVec.push_back(*i.value<int>());
+        }
+        return tmpVec;
     }
 
 }
