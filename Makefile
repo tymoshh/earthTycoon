@@ -16,4 +16,4 @@ push:
 	make end
 
 end:
-	cls
+	
