@@ -40,8 +40,18 @@ int main(int argc, char *argv[]) {
     // event manager
     SDL_Event myEvent;
 
-    // loading textures
-    vector<int> x = filemgr::getIntVec({"textures", "mine"});
+    // load textures
+    mineNs::loadTextures(&myRenderer, filemgr::getStrVec({"textures", "mine"}));
+
+    // load fonts
+
+    // load audio
+
+    // clear renderer
+    SDL_RenderClear(myRenderer);
+
+    // send renderer to window
+    SDL_RenderPresent(myRenderer);
 
     cout << WINDOW_TITLE << endl;
     cout << WINDOW_WIDTH  << "x" << WINDOW_HEIGHT << endl;

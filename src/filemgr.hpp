@@ -12,6 +12,8 @@ namespace filemgr {
         configTbl = toml::parse_file(configPath);
     }
 
+    // 
+
     // getting elements
 
     std::string getStr(std::vector<std::string> elementLocation) {
@@ -34,8 +36,8 @@ namespace filemgr {
         return -1;
     }
 
-    std::vector<int> getIntVec(std::vector<std::string> elementLocation) {
-        std::vector<int> tmpVec;
+    std::vector<std::string> getStrVec(std::vector<std::string> elementLocation) {
+        std::vector<std::string> tmpVec;
         toml::array* tmpArr;
         switch (elementLocation.size()) {
             case 1:
@@ -44,7 +46,7 @@ namespace filemgr {
                 tmpArr = configTbl[elementLocation[0]][elementLocation[1]].as_array();
         }
         for (auto &i : *tmpArr) {
-            tmpVec.push_back(*i.value<int>());
+            tmpVec.push_back(*i.value<std::string>());
         }
         return tmpVec;
     }
